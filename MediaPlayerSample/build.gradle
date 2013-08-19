@@ -25,3 +25,7 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:13.0.0'
 }
+
+tasks.withType(Compile) {
+    options.encoding = "UTF-8"
+}
