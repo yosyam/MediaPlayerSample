@@ -1,5 +1,9 @@
 package net.metax.mediaplayersample;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -37,8 +41,8 @@ public class PlayerActivity extends Activity implements View.OnClickListener,
     private MediaPlayer mMediaPlayer;
     private Handler mHandler = new Handler();
     private int mIndex;
-
-
+    private BroadcastReceiver mReceiver;
+    private IntentFilter mIntentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,19 @@ public class PlayerActivity extends Activity implements View.OnClickListener,
         mButtonSkip.setOnClickListener(this);
         mButtonStop.setOnClickListener(this);
 
+        mReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.d(TAG, "BroadcastReceiver#onReceive(): " + intent.getAction());
+                if (intent.getAction().equals(AudioManager.ACTION_AUDIO_BECOMING_NOISY)) {
+                    if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+                        onClick(mButtonPlayPause);
+                    }
+                }
+            }
+        };
+        mIntentFilter = new IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY);
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
         setEnabledButton(false);
     }
@@ -68,7 +85,7 @@ public class PlayerActivity extends Activity implements View.OnClickListener,
         super.onResume();
         Log.d(TAG, "onResume");
         mItems = MusicItem.getMusicItems(getApplicationContext());
-        Log.d(TAG, "onResume: MusicItems.size() :" + mItems.size());
+        Log.d(TAG, "onResume: MusicItems.size(): " + mItems.size());
         if (mItems.size() != 0) {
             mMediaPlayer = new MediaPlayer();
             mMediaPlayer.setOnPreparedListener(this);
@@ -76,6 +93,8 @@ public class PlayerActivity extends Activity implements View.OnClickListener,
             mMediaPlayer.setOnCompletionListener(this);
             prepare();
         }
+        registerReceiver(mReceiver, mIntentFilter);
+
     }
 
     @Override
@@ -88,6 +107,7 @@ public class PlayerActivity extends Activity implements View.OnClickListener,
             mMediaPlayer = null;
             mChronometer.stop();
         }
+        unregisterReceiver(mReceiver);
     }
 
     private void prepare() {
