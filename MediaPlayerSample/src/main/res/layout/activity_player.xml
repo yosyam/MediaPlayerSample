@@ -42,7 +42,8 @@
     <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:baselineAligned="false">
 
         <ImageButton
                 android:layout_width="64dp"
@@ -50,28 +51,32 @@
                 android:id="@+id/buttonRewind"
                 android:adjustViewBounds="false"
                 android:src="@drawable/media_rewind"
-                android:layout_margin="1dp"/>
+                android:layout_margin="1dp"
+                android:contentDescription="Rewind"/>
 
         <ImageButton
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:id="@+id/buttonPlayPause"
                 android:src="@drawable/media_play"
-                android:layout_margin="1dp"/>
+                android:layout_margin="1dp"
+                android:contentDescription="Play"/>
 
         <ImageButton
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:id="@+id/buttonSkip"
                 android:src="@drawable/media_skip"
-                android:layout_margin="1dp"/>
+                android:layout_margin="1dp"
+                android:contentDescription="Skip"/>
 
         <ImageButton
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:id="@+id/buttonStop"
                 android:src="@drawable/media_stop"
-                android:layout_margin="1dp"/>
+                android:layout_margin="1dp"
+                android:contentDescription="Stop"/>
     </LinearLayout>
 
 </LinearLayout>

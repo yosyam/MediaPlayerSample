@@ -16,5 +16,11 @@
             android:text="Player"
             android:id="@+id/buttonPlayer"/>
 
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service"
+            android:id="@+id/buttonServicePlayer"/>
+
 </LinearLayout>
 

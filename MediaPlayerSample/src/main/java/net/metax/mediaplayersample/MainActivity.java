@@ -11,6 +11,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "MainActivity";
     private Button mButtonPlayer;
+    private Button mButtonServicePlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +19,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         mButtonPlayer = (Button) findViewById(R.id.buttonPlayer);
-
         mButtonPlayer.setOnClickListener(this);
+
+        mButtonServicePlayer = (Button) findViewById(R.id.buttonServicePlayer);
+        mButtonServicePlayer.setOnClickListener(this);
     }
 
 
@@ -35,6 +38,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         if ( view == mButtonPlayer ) {
             Intent intent = new Intent(MainActivity.this, PlayerActivity.class);
+            startActivity(intent);
+        } else if ( view == mButtonServicePlayer) {
+            Intent intent = new Intent(MainActivity.this, PlayerRemoteControlActivity.class);
             startActivity(intent);
         }
     }
