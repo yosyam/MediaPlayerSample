@@ -165,7 +165,11 @@ public class PlayerService extends Service implements OnCompletionListener,
             current = mPlayer.getCurrentPosition();
         }
         mNotification.contentView.setChronometer(R.id.chronometer, SystemClock.elapsedRealtime() - current, null, playing);
-        mNotificationManager.notify(NOTIFICATION_ID, mNotification);
+//        mNotificationManager.notify(NOTIFICATION_ID, mNotification);
+        if (mState != State.Stopped) {
+            startForeground(NOTIFICATION_ID, mNotification);
+        }
+
     }
 
 
@@ -223,6 +227,12 @@ public class PlayerService extends Service implements OnCompletionListener,
         } else {
             mPlayer.reset();
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d(TAG, "onDestroy");
+        super.onDestroy();
     }
 
     @Override
@@ -301,6 +311,7 @@ public class PlayerService extends Service implements OnCompletionListener,
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d(TAG, "onStartCommand");
         String action = intent.getAction();
         if (action.equals(ACTION_PLAYPAUSE)) {
             processTogglePlaybackRequest();
@@ -422,9 +433,9 @@ public class PlayerService extends Service implements OnCompletionListener,
     }
 
     private void relaxResources(boolean releaseMediaPlayer) {
-        stopForeground(true);
 
         if (releaseMediaPlayer && mPlayer != null) {
+            stopForeground(true);
             mPlayer.reset();
             mPlayer.release();
             mPlayer = null;
