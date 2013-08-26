@@ -22,5 +22,11 @@
             android:text="Service"
             android:id="@+id/buttonServicePlayer"/>
 
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ChannelList"
+            android:id="@+id/buttonChannelList"/>
+
 </LinearLayout>
 

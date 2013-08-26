@@ -9,37 +9,38 @@
         android:targetSdkVersion="14" />
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <activity
-            android:name=".MainActivity"
+            android:name="net.metax.mediaplayersample.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleInstance" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".PlayerActivity"
-            android:label="@string/title_activity_player"
-            android:configChanges="orientation|keyboardHidden|screenSize">
+            android:name="net.metax.mediaplayersample.PlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_player" >
         </activity>
-        <activity android:name=".PlayerRemoteControlActivity" />
+        <activity android:name="net.metax.mediaplayersample.PlayerRemoteControlActivity" />
 
-        <receiver android:name=".PlayerReceiver">
+        <receiver android:name="net.metax.mediaplayersample.PlayerReceiver" >
             <intent-filter>
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".PlayerService" >
+        <service android:name="net.metax.mediaplayersample.PlayerService" >
             <intent-filter>
                 <action android:name="net.metax.mediaplayer.ACTION_PLAYPAUSE" />
                 <action android:name="net.metax.mediaplayer.ACTION_PLAY" />
@@ -51,7 +52,14 @@
             </intent-filter>
         </service>
 
-
+        <activity
+            android:name="net.metax.mediaplayersample.ChannelListActivity"
+            android:label="@string/title_activity_channel"
+            android:parentActivityName="net.metax.mediaplayersample.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="net.metax.mediaplayersample.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
