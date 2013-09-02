@@ -901,20 +901,23 @@ containing a value of this type.
         public static final int abs__textButton=0x7f070013;
         public static final int abs__title=0x7f07001b;
         public static final int abs__up=0x7f07000f;
-        public static final int action_settings=0x7f070042;
-        public static final int buttonChannelList=0x7f070035;
-        public static final int buttonHome=0x7f070036;
-        public static final int buttonPlayPause=0x7f07003c;
-        public static final int buttonPlayer=0x7f070033;
-        public static final int buttonRewind=0x7f07003b;
-        public static final int buttonServicePlayer=0x7f070034;
-        public static final int buttonSkip=0x7f07003d;
-        public static final int buttonStop=0x7f07003e;
-        public static final int channelImage=0x7f07003f;
+        public static final int action_settings=0x7f070045;
+        public static final int buttonChannelList=0x7f070038;
+        public static final int buttonHome=0x7f070039;
+        public static final int buttonPlayPause=0x7f07003f;
+        public static final int buttonPlayer=0x7f070036;
+        public static final int buttonRewind=0x7f07003e;
+        public static final int buttonServicePlayer=0x7f070037;
+        public static final int buttonSkip=0x7f070040;
+        public static final int buttonStop=0x7f070041;
+        public static final int channelImage=0x7f070042;
         public static final int channelList=0x7f070032;
-        public static final int chronometer=0x7f07003a;
+        public static final int channel_fragment=0x7f070035;
+        public static final int channels_fragment=0x7f070034;
+        public static final int chronometer=0x7f07003d;
         public static final int disableHome=0x7f070008;
         public static final int edit_query=0x7f070026;
+        public static final int fragment_container=0x7f070033;
         public static final int homeAsUp=0x7f070005;
         public static final int listMode=0x7f070001;
         public static final int normal=0x7f070000;
@@ -922,11 +925,11 @@ containing a value of this type.
         public static final int showHome=0x7f070004;
         public static final int showTitle=0x7f070006;
         public static final int tabMode=0x7f070002;
-        public static final int text1=0x7f070040;
-        public static final int text2=0x7f070041;
-        public static final int textAlbum=0x7f070038;
-        public static final int textArtist=0x7f070037;
-        public static final int textTitle=0x7f070039;
+        public static final int text1=0x7f070043;
+        public static final int text2=0x7f070044;
+        public static final int textAlbum=0x7f07003b;
+        public static final int textArtist=0x7f07003a;
+        public static final int textTitle=0x7f07003c;
         public static final int useLogo=0x7f070003;
         public static final int wrap_content=0x7f070009;
     }
@@ -963,10 +966,11 @@ containing a value of this type.
         public static final int activity_home=0x7f030016;
         public static final int activity_main=0x7f030017;
         public static final int activity_player=0x7f030018;
-        public static final int remote_control=0x7f030019;
-        public static final int row_channel=0x7f03001a;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001b;
-        public static final int sherlock_spinner_item=0x7f03001c;
+        public static final int channel_view=0x7f030019;
+        public static final int remote_control=0x7f03001a;
+        public static final int row_channel=0x7f03001b;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001c;
+        public static final int sherlock_spinner_item=0x7f03001d;
     }
     public static final class menu {
         public static final int channel=0x7f0c0000;
