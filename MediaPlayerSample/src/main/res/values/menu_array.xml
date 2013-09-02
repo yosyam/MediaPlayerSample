@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_menu">
+        <item>Dashboard</item>
+        <item>Que List</item>
+        <item>My Channel</item>
+        <item>Search</item>
+        <item>Hobby</item>
+    </string-array>
+</resources>

@@ -13,6 +13,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button mButtonPlayer;
     private Button mButtonServicePlayer;
     private Button mButtonChannelList;
+    private Button mButtonHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         mButtonChannelList = (Button) findViewById(R.id.buttonChannelList);
         mButtonChannelList.setOnClickListener(this);
+
+        mButtonHome = (Button) findViewById(R.id.buttonHome);
+        mButtonHome.setOnClickListener(this);
+
 
     }
 
@@ -48,8 +53,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Intent intent = new Intent(MainActivity.this, PlayerRemoteControlActivity.class);
             startActivity(intent);
         } else if ( view == mButtonChannelList) {
-        Intent intent = new Intent(MainActivity.this, ChannelListActivity.class);
-        startActivity(intent);
-    }
+            Intent intent = new Intent(MainActivity.this, ChannelListActivity.class);
+            startActivity(intent);
+        } else if ( view == mButtonHome) {
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
     }
 }

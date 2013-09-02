@@ -28,5 +28,11 @@
             android:text="ChannelList"
             android:id="@+id/buttonChannelList"/>
 
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:id="@+id/buttonHome"/>
+
 </LinearLayout>
 

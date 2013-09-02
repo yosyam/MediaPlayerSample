@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="14" />
+        android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -55,6 +55,14 @@
         <activity
             android:name="net.metax.mediaplayersample.ChannelListActivity"
             android:label="@string/title_activity_channel"
+            android:parentActivityName="net.metax.mediaplayersample.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="net.metax.mediaplayersample.MainActivity" />
+        </activity>
+        <activity
+            android:name="net.metax.mediaplayersample.HomeActivity"
+            android:label="@string/title_activity_home"
             android:parentActivityName="net.metax.mediaplayersample.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

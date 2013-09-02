@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MediaPlayerSample/MediaPlayerSample.iml" filepath="$PROJECT_DIR$/MediaPlayerSample/MediaPlayerSample.iml" />
       <module fileurl="file://$PROJECT_DIR$/MediaPlayerSampleProject.iml" filepath="$PROJECT_DIR$/MediaPlayerSampleProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/ActionBarSherlock/actionbarsherlock/actionbarsherlock.iml" filepath="$PROJECT_DIR$/libraries/ActionBarSherlock/actionbarsherlock/actionbarsherlock.iml" />
     </modules>
   </component>
 </project>
