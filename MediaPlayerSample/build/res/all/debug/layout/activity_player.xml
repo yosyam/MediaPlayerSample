@@ -1,0 +1,82 @@
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:gravity="center">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/textArtist"
+                />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/textAlbum"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/textTitle"/>
+
+        <Chronometer
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chronometer"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:baselineAligned="false">
+
+        <ImageButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/buttonRewind"
+                android:adjustViewBounds="false"
+                android:src="@drawable/media_rewind"
+                android:layout_margin="1dp"
+                android:contentDescription="Rewind"/>
+
+        <ImageButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/buttonPlayPause"
+                android:src="@drawable/media_play"
+                android:layout_margin="1dp"
+                android:contentDescription="Play"/>
+
+        <ImageButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/buttonSkip"
+                android:src="@drawable/media_skip"
+                android:layout_margin="1dp"
+                android:contentDescription="Skip"/>
+
+        <ImageButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/buttonStop"
+                android:src="@drawable/media_stop"
+                android:layout_margin="1dp"
+                android:contentDescription="Stop"/>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/C:/Users/yoshi/AndroidStudioProjects/MediaPlayerSampleProject/MediaPlayerSample/src/main/res/layout/activity_player.xml -->
